@@ -1,0 +1,157 @@
+
+.extras{
+  position: sticky;
+  top:0
+}
+
+@media only screen and (max-width: 600px) {
+  .extras {
+    position:relative;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .extras1 {
+    position:relative;
+  }
+  
+}
+
+
+nav{
+  background-color:#475b66;
+  
+}
+
+.navb{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.vline{
+  display:none
+ }
+
+.title{
+  font-size:35px;
+  margin-left:100px;
+}
+
+.navb-links li {
+  font-size:17px;
+}
+
+.burg {
+  position: absolute;
+  top:20px;
+  right: 50px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.burg .line {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+
+@media (max-width:600px){
+.navb{
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+  
+ .title{
+   margin-left:0px;
+ }
+
+
+  .burg{
+    display:flex;
+  }
+ 
+
+  .navb-links {
+    display: none;
+  
+  }
+
+  .navb-links ul {
+    
+    display:flex;
+    flex-direction:column ;
+ }
+
+  .navb-links.active1{
+    display: flex;
+    
+  }
+
+  .navb.active2{
+    height:250px;
+  }
+
+  .vline.active3{
+    width:100%;
+    display:block; 
+  }
+}
+
+.fcont{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color:green;
+  font-weight:bold;
+  font-size:12px;
+  text-decoration:underline;
+}
+
+.nF{
+  width:30%;
+  cursor:pointer
+}
+
+.pF{
+  width:30%;
+  cursor:pointer
+}
+
+.card.small{
+  height:auto;
+}
+
+.textResults{
+  
+  font-weight:bold;
+  font-size:22px;
+  
+}
+
+.logIn{
+  margin: 0 auto;
+  width:300px
+}
+
+.error{
+  text-align: center;
+  margin-top:5px; 
+  background-color: rgb(243, 169, 194);
+  padding:10px;
+  border-radius: 8px;
+  font-size:15px;
+  font-weight: bold;
+  color:black;
+}
+
+

@@ -1,0 +1,19 @@
+const sql=require("mssql");
+
+const config = {
+    user: "sa",
+    password: "qwerty",
+    server: 'SIAM', // You can use 'localhost\\instance' to connect to named instance
+    database: 'AdventureWorks2012',
+    port: 1433
+}
+
+var connection= new sql.ConnectionPool(config);
+
+module.exports=connection.connect((error)=>{
+    if(error){
+        console.log(error)
+    }else{
+        var contacts =new sql.Request(contacts);
+    }
+})
