@@ -67,13 +67,13 @@ exports.putCustomerContacts=async(req,res)=>{
                 const request=new sql.Request(Contacts).input('FirstName',sql.NVarChar(50),FirstName)
                                                        .input('LastName',sql.NVarChar(50),LastName)
                                                        .input('Phone',sql.NVarChar(25),Phone)
-                                                       .input('EmailAddres',sql.NVarChar(50),EmailAddress)
+                                                       .input('EmailAddress',sql.NVarChar(50),EmailAddress)
                                                        .input('user1',sql.NVarChar(50),user1)
                                                        .input('fullDate',sql.NVarChar(50),fullDate)
        
                 await request.query(`UPDATE dbo.customerContacts SET FirstName=@FirstName,`+
                                                     `LastName=@LastName,`+
-                                                    `EmailAddress=@mailAddress,`+
+                                                    `EmailAddress=@EmailAddress,`+
                                                     `Phone=@Phone,`+
                                                     `LastUpdatedBy=@user1,`+
                                                     `LastUpdatedBy=@fullDate WHERE BusinessEntityId=${id}`);

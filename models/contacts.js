@@ -1,10 +1,11 @@
 const sql=require("mssql");
+const configEnv=require("config");
 
 const config = {
-    user: "sa",
-    password: "qwerty",
-    server: 'SIAM', // You can use 'localhost\\instance' to connect to named instance
-    database: 'AdventureWorks2012',
+    user: configEnv.get("user"),
+    password: configEnv.get("password"),
+    server: configEnv.get("server"), // You can use 'localhost\\instance' to connect to named instance
+    database: configEnv.get("databaseContacts"),
     port: 1433
 }
 

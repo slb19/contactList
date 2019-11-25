@@ -1,6 +1,7 @@
 node_modules/
 /client/build
 /config
+/models/products.js
 /.vscode
 
 /client/.pnp

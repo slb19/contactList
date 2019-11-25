@@ -1,5 +1,8 @@
 const express = require("express");
+const helmet =require("helmet")
 const app=express();
+
+app.use(helmet());
 
 const customerContactsRoutes=require("./routes/customerContacts.js");
 const employeeContactsRoutes=require("./routes/employeeContacts.js");
@@ -24,7 +27,9 @@ app.use(adminRoutes);
        res.redirect("/login")
    });
 
-app.listen(5000,()=>{
+   const port=5000 || process.env.PORT
+
+app.listen(port,()=>{
     console.log("warehouse server has started")
 })
 
