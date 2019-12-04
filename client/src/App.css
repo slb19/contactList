@@ -154,4 +154,16 @@ nav{
   color:black;
 }
 
+.alert1{
+  margin-top:53px;
+  background-color:#ED3939;
+  padding:20px;
+  width:90%;
+  border-radius:8px;
+  text-align:center;
+  color:white;
+  font-size:1.2rem;
+  text-decoration: underline;
+ 
+}
 

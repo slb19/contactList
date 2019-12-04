@@ -10,6 +10,7 @@ const ContactItem = (props) => {
 const[update, setUpdate]=useState(false);
 const [editContact,seteditContact]=useState(null);
 
+
 const {FirstName, LastName, Phone, EmailAddress, BusinessEntityId,LastUpdatedBy,LastUpdatedAt}=props.contact;
 
 const onClick=(e)=>{
@@ -50,6 +51,7 @@ const onClickD=(e)=>{
        dispatch(deleteContact(props.contact));
 }
 
+
     return (
       
         <div className="row ">
@@ -57,7 +59,7 @@ const onClickD=(e)=>{
           <div className="card small blue-grey darken-1" >
             {update!==true ? 
 
-            <div className="card-content  white-text " >
+            <div className="card-content white-text"  >
               
                 <p style={{float:"right"}}>
                   <span style={{color:"black", fontStyle:"italic"}}>

@@ -3,8 +3,13 @@ import AdminForm from "./AdminForm.js"
 import AdminUserItem from "./AdminUserItem.js"
 import Spinner from"../layout/Spinner.js"
 
+import styled, {keyframes} from "styled-components"
+import {bounce} from "react-animations";
+
 import {connect} from "react-redux";
 import {getUsers} from '../../redux/actions/usersActions.js';
+
+const Bounce=styled.div`animation: 3s ${keyframes `${bounce}`} infinite`;
 
 const Admin = ({users, getUsers}) => {
     
@@ -23,10 +28,11 @@ const Admin = ({users, getUsers}) => {
             <div className="container">
               <div className="row">
               
-                <div className="col l4 m6 s12">
+                <div className="col l4 m6 s12 extras">
                         <AdminForm />
+                        <Bounce><div className="alert1">Please dont delete adm1 user</div> </Bounce>
                     </div>
-                        
+                       
               <div className="col l8 m6 s12">
               
               <table className="highlight ">

@@ -9,7 +9,7 @@ import {connect} from "react-redux"
 const Contacts = ({ contacts, 
                      filter,
                       next, 
-                      editContactF,
+                     editContactF,
                                   }) => {
     
     const dispatch=useDispatch();

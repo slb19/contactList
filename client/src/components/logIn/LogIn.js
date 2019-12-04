@@ -2,22 +2,27 @@ import React,{useState, useEffect} from 'react'
 import { withRouter } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {login,clearError} from "../../redux/actions/authActions.js"
+import Spinner from"../layout/Spinner.js"
+
 
 const LogIn = ({auth,history }) => {
 
     const dispatch=useDispatch();
+
+    const {isAuth, isHR, isAdmin, error}=auth
 
     const [user,setUser]= useState({
         username:"",
         password:"",   
     });
 
+    const [loading,setLoading]=useState(false)
+
+    const{username,password}=user
+
     const onChange=(e)=>{
         setUser({...user, [e.target.name]:e.target.value})
     }
-
-    const{username,password}=user
-    const {isAuth, isHR, isAdmin, error}=auth
 
     const onSubmit=(e)=>{
         e.preventDefault();
@@ -32,7 +37,12 @@ const LogIn = ({auth,history }) => {
         }if(isAuth && isHR && isAdmin){
             history.push("/admin")
         }
-    }, [isAuth, isHR,isAdmin, history])
+        if(error || !error){
+            setLoading(false)
+        }
+        
+    }, [isAuth, isHR,isAdmin, history, error])
+
 
     return (
     <div className='container'>
@@ -50,11 +60,14 @@ const LogIn = ({auth,history }) => {
                     <input type="password" name="password" value={password} onChange={onChange} required />
                     <label htmlFor="password">Password</label>
                 </div>
+               
                 <input type="submit" value="Submit" 
                                 className="waves-effect waves-light btn-large"
-                                    style={{backgroundColor:"#0091ea"}}/>
+                                    style={{backgroundColor:"#0091ea"}} onClick={()=>setLoading(true)}/>
+                                                        
             </form>
          </div>
+         {loading && !error && <Spinner /> }
        </div>
     )
 }
