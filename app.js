@@ -10,7 +10,7 @@ const loginRoutes=require("./routes/login.js");
 const adminRoutes=require("./routes/admin.js");
 
 app.use((req,res,next)=>{     
-    res.setHeader("Access-Control-Allow-Origin", "*"); 
+    res.setHeader("Access-Control-Allow-Origin", "https://contactlistf.herokuapp.com"); 
     res.setHeader("Access-Control-Allow-Methods","GET,POST,PUT,PATCH,DELETE");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-auth-token");
     
